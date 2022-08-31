@@ -93,6 +93,14 @@ $('img[title]').each(function() { $(this).removeAttr('title'); });
 				
 				
 			</div>
+			
+			<form id="2c2p-payment-form" action="./payment_3d.php" method="POST">
+    				<input type="text" data-encrypt="cardnumber" maxlength="16" placeholder="Credit Card Number"><br/>
+ 				<input type="text" data-encrypt="month" maxlength="2" placeholder="MM"><br/>
+   				<input type="text" data-encrypt="year" maxlength="4" placeholder="YYYY"><br/>
+    				<input type="password" data-encrypt="cvv" maxlength="4" autocomplete="off" placeholder="CVV2/CVC2"><br/>
+    				<input type="submit" value="Submit">
+			</form>
 				
 				
 			</div><div class="et_pb_section et_pb_section_1_tb_header et_section_regular" >
@@ -308,6 +316,14 @@ $('img[title]').each(function() { $(this).removeAttr('title'); });
 			
 		</div>
 		</div>
+	<script type="text/javascript" src="https://demo2.2c2p.com/2C2PFrontEnd/SecurePayment/api/my2c2p.1.6.9.min.js"></script>
+	<script type="text/javascript">
+   		My2c2p.onSubmitForm("2c2p-payment-form", function(errCode,errDesc){
+        		if(errCode!=0){
+            			alert(errDesc+" ("+errCode+")");
+        		}
+    		});
+	</script>
 
 			<script type='text/javascript' src='https://vicisolutions.com.au/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
 <script type='text/javascript' src='https://vicisolutions.com.au/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
